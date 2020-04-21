@@ -1,224 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="Jake Cover's Homepage" name="description">
     <title>Jake Cover</title>
 
-    <!-- Mobile Stuff -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Generic CSS for other things -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-    <script src="https://unpkg.com/packery@2/dist/packery.pkgd.min.js"></script>
-    <script src="./scripts/packery-mode.pkgd.min.js"></script>
-    <script src="./scripts/filter_on_flickity.js"></script>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./css/index.css">
-    </link>
-
+    <link href="css/index.css">
 </head>
-
 <body>
-    <div class="container">
-        <div class="jumbotron">
-            <h1>Hi!</h1>
-            <h3>I'm <b>Jake Cover</b>, a</h3><br>
-            <div id="UpperCarousel">
-                <div class="upper-main-carousel">
-                    <div class="carousel-cell developer">
-                        <h3 class="carousel-cell-content">
-                            Developer
-                        </h3>
-                    </div>
-                    <div class="carousel-cell student">
-                        <h3 class="carousel-cell-content">
-                            Student
-                        </h3>
-                    </div>
-                    <div class="carousel-cell person">
-                        <h3 class="carousel-cell-content">
-                            Person
-                        </h3>
-                    </div>
-                </div>
-                <script>
-                    $('.upper-main-carousel').flickity({
-                        wrapAround: true,
-                        autoPlay: 3000,
-                        pageDots: false,
-                        on: {
-                            change: function (index) {
-                                console.log("Upper: " + index)
-                            }
-                        }
-                    });
-                </script>
-                <button onclick="">Clike ME!</button>
-            </div>
-            <br>
-            <h3>Who likes</h3><br>
-            <div id="LowerCarousel">
-                <div class="lower-main-carousel">
-                    <div class="carousel-cell python">
-                        <h3 class="carousel-cell-content">
-                            Python
-                        </h3>
-                    </div>
-                    <div class="carousel-cell unity">
-                        <h3 class="carousel-cell-content">
-                            Unity
-                        </h3>
-                    </div>
-                    <div class="carousel-cell games">
-                        <h3 class="carousel-cell-content">
-                            FPS Games
-                        </h3>
-                    </div>
-                    <div class="carousel-cell people">
-                        <h3 class="carousel-cell-content">
-                            People
-                        </h3>
-                    </div>
-                </div>
-                <script>
-                    $('.lower-main-carousel').flickity({
-                        wrapAround: true,
-                        autoPlay: 2000,
-                        pageDots: false,
-                        on: {
-                            change: function (index) {
-                                switch (index) {
-                                    case 0:
-                                        $('.grid').isotope({ filter: '.python' });
-                                        break;
-                                    case 1:
-                                        $('.grid').isotope({ filter: '.unity' });
-                                        break;
-                                    case 2:
-                                        $('.grid').isotope({ filter: '.people' });
-                                        break;
-                                    case 3:
-                                        $('.grid').isotope({ filter: '.games' });
-                                        break;
-                                }
-                                console.log("Lower: " + index)
-                            }
-                        }
-                    });
-                </script>
-            </div>
-        </div>
-        <div class="grid">
-            <div class="grid-item python developer">
-                <h5>1 Distest</h5>
-                <p>
-                    This is a really cool project!
+<header>
+    <a href="index.html" class="name">Jake Cover</a>
 
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
-                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-            </div>
-            <div class="grid-item python developer">
-                <h5>2 ReplyBot</h5>
-                <p>
-                    This is a really cool project!
-                    <br>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
-                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-            </div>
-            <div class="grid-item developer unity">
-                <h5>3 ForeSight Sports</h5>
-                <p>
-                    This is a really cool project!
-
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged.
-                </p>
-            </div>
-            <div class="grid-item student unity">
-                <h5>4 Unity Club</h5>
-                <p>
-                    This is a really cool project!
-
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged.
-                </p>
-            </div>
-            <div class="grid-item student">
-                <h5>5 Robotics Captain</h5>
-                <p>
-                    This is a really cool project!
-
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged.
-                </p>
-            </div>
-            <div class="grid-item friends person">
-                <h5>6 Telegram</h5>
-                <p>
-                    This is a really cool project!
-                    <br>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
-                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-            </div>
-            <div class="grid-item person games">
-                <h5>steam</h5>
-                <p>
-                    This is a really cool project!
-                    <br>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
-                    leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
-                    with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
-                    publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-            </div>
-        </div>
-        <script>
-            $('.grid').isotope({
-                itemSelector: '.grid-item',
-                layoutMode: 'fitRows',
-                layoutMode: 'packery',
-            });
-        </script>
+    <div class="header-right">
+        <a class="active" href="index.html">Home</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="https://github.com/JakeCover">GitHub</a>
     </div>
+</header>
 </body>
-
 </html>

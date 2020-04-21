@@ -1,95 +1,40 @@
-.jumbotron {
-  text-align: center;
-}
+.header {
+  overflow: hidden;
+  background-color: lightgrey;
+  padding: 20px 10px; }
 
-#UpperCarousel {
-  width: 70%;
-  margin: auto;
-}
-
-#LowerCarousel {
-  width: 70%;
-  margin: auto;
-}
-
-.carousel-cell {
-  width: 66%;
-  background: #ffffff;
-  margin-right: 10px;
-  height: 60px;
-  line-height: 1.5;
-  border-radius: 5px;
-}
-
-.carousel-cell-content {
-  color: #2E2E2E;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.grid-item {
-  width: 30%;
+.header a {
   float: left;
-  height: auto;
-  background: #e6e5e4;
-  border: 2px solid #b6b5b4;
-  margin: 5px;
+  color: black;
   text-align: center;
-  border-radius: 5px;
-}
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px; }
 
-.grid {
-  align-content: center;
-}
+.header a.name {
+  font-size: 25px;
+  font-weight: bold; }
 
-.student {
-  border-width: 4px;
-  background-color: #ef9a9a;
-  border-radius: 5px;
-  border-style: none;
-}
+.header a:hover {
+  background-color: #dddddd;
+  color: black; }
 
-.developer {
-  border-width: 4px;
-  background-color: #81d4fa;
-  border-radius: 5px;
-  border-style: none;
-}
+.header a:active {
+  background-color: dodgerblue;
+  color: white; }
 
-.person {
-  border-width: 4px;
-  background-color: #66bb6a;
-  border-radius: 5px;
-  border-style: none;
-}
+.header-right {
+  float: right; }
 
-.python {
-  border-width: 4px;
-  border-top-color: #FFD43B;
-  border-bottom-color: #FFD43B;
-  border-left-color: #306998;
-  border-right-color: #306998;
-  border-style: solid;
-}
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left; }
 
-.unity {
-  border-width: 4px;
-  border-top-color: #000000;
-  border-bottom-color: #000000;
-  border-left-color: #dddddd;
-  border-right-color: #dddddd;
-  border-style: solid;
-}
-
-.friends {
-  border-width: 4px;
-  border-top-color: #33691e;
-  border-bottom-color: #33691e;
-  border-left-color: #283593;
-  border-right-color: #283593;
-  border-style: solid;
-}
+  .header-right {
+    float: none; } }
 
 /*# sourceMappingURL=index.css.map */
