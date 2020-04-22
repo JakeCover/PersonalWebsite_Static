@@ -8,7 +8,8 @@
   box-sizing: border-box
   height: 200px
   //box-shadow: 0 2px 3px 0px rgba(0,0,0,0.25)
-  transition: 0.22s ease-in-out
+  //transition: 0.22s ease-in-out
+  animation: FadeIn 0.22s
 
 
 .grid
@@ -34,17 +35,32 @@
   .grid-item--width2
     width: 100%
 
-.blur-me
-  filter: grayscale(20%) blur(0.7px) brightness(94%)
-  opacity: .8
-  //transform: scale(.995)
-  box-shadow: none
 
-.grid:hover .grid-item:hover
-  //transform: scale(1.005)
-  filter: blur(0px)
-  opacity: 1
-  //box-shadow: 0 8px 20px 0px rgba(0,0,0,0.125)
+.blur-me
+  animation: FadeOut 0.22s
+  animation-fill-mode: both
+
+@keyframes FadeOut
+  to
+    opacity: 0.8
+    filter: grayscale(20%) blur(0.7px) brightness(94%)
+
+@keyframes FadeIn
+  to
+    opacity: 1
+    filter: grayscale(0%) blur(0px) brightness(100%)
+
+
+//  filter:
+//  opacity: .8
+//  //transform: scale(.995)
+//  box-shadow: none
+//
+//.grid:hover .grid-item:hover
+//  //transform: scale(1.005)
+//  filter: blur(0px)
+//  opacity: 1
+//  //box-shadow: 0 8px 20px 0px rgba(0,0,0,0.125)
 
 //.grid-img
 //  display: inline-block
