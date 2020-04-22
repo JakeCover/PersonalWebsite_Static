@@ -6,10 +6,11 @@
     <meta content="Jake Cover's Homepage" name="description">
     <title>Jake Cover</title>
 
-    <link href="css/index.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/masonry.css">
 </head>
 <body>
-<header>
+<header class="header">
     <a href="index.html" class="name">Jake Cover</a>
 
     <div class="header-right">
@@ -19,5 +20,45 @@
         <a href="https://github.com/JakeCover">GitHub</a>
     </div>
 </header>
+<div class="page">
+    <div class="grid">
+        <!--Distest-->
+        <div class="grid-item grid-item--tall4">
+            Distest
+        </div>
+        <!--CodeDay-->
+        <div class="grid-item grid-item--image">
+            <img src="images/codedaysd.png" alt="CodeDay SD Logo" width="230" height="230">
+        </div>
+        <!--SRND-->
+        <div class="grid-item">
+            SRND
+        </div>
+        <!--ScoreSaver Installer-->
+        <div class="grid-item">
+            ScoreSaber Installer
+        </div>
+        <!--Foresight-->
+        <div class="grid-item grid-item--image">
+            <img src="images/foresightsports.png" alt="ForeSight Sports Logo0" width="480">
+        </div>
+        <!--ReplyBot-->
+        <div class="grid-item grid-item--tall3">ReplyBot</div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="scripts/masonry_conf.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+<script>
+    $(".grid-item").hover(
+        function () {
+            $(this).siblings().addClass('blur-me')
+        },
+        function () {
+            $(this).siblings().removeClass('blur-me')
+        }
+    )
+</script>
 </body>
 </html>
