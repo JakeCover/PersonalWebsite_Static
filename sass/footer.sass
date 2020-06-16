@@ -1,0 +1,27 @@
+@import "breakpoint-helpers"
+@import "colors"
+@import "grid-helpers"
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat:wght@400;600;700&display=swap')
+
+.site-footer
+  overflow: hidden
+  background-color: $colorblind-fg
+  padding: 15px 10px
+  font-family: "Fira Code", monospace
+  border-radius: 3px
+  font-size: small
+
+  h6
+    font-size: medium
+    margin-top: 0px
+    margin-bottom: 0px
+
+
+.footer-grid
+  box-sizing: border-box
+  position: relative
+
+.footer-grid::after
+  content: ""
+  clear: both
+  display: table
