@@ -1,7 +1,8 @@
 @import "breakpoint-helpers"
+@import "colors"
 
 .grid-item
-  background-color: #eaeaea
+  background-color: $colorblind-item
   border-radius: 3px
   width: 240px
   margin-bottom: 10px
@@ -9,8 +10,68 @@
   box-sizing: border-box
   height: 200px
   //box-shadow: 0 2px 3px 0px rgba(0,0,0,0.25)
-  //transition: 0.22s ease-in-out
-  animation: FadeIn 0.22s
+  transition: 0.18s ease-in-out
+  //animation: FadeIn 0.22s
+  overflow: hidden
+  position: relative
+
+
+.service-wrapper-inner
+  height: 100%
+  width: 90%
+  position: absolute
+  z-index: 1
+  top: 68%
+  padding: 15px 20px
+  transition: 0.2s ease
+  p
+    color: #e7e7e7
+
+  &.notitle
+    width: 60%
+    top: 70%
+
+.service-overlay
+  background-color: rgba(32,32,32,0.4)
+  width: 120%
+  height: 120%
+  position: absolute
+  top: 80%
+  left: -28px
+  z-index: 0
+  transition: 0.2s ease
+
+  &.notitle
+    -webkit-transform: rotate(35deg)
+    -moz-transform: rotate(35deg)
+    -ms-transform: rotate(35deg)
+    -o-transform: rotate(35deg)
+    left: -65%
+    height: 300%
+
+  &.title
+    -webkit-transform: rotate(10deg)
+    -moz-transform: rotate(10deg)
+    -ms-transform: rotate(10deg)
+    -o-transform: rotate(10deg)
+
+
+
+.grid-item:hover
+  .service-wrapper-inner
+    top: -10%
+    padding: 20px 20px
+
+    &.notitle
+      padding: 15px 20px
+
+  .service-overlay
+    top: -10%
+    background-color: rgba(32,32,32,0.8)
+
+    &.notitle
+      top: -20%
+      left: -20%
 
 
 .grid
@@ -38,7 +99,7 @@
 
 
 .blur-me
-  filter: grayscale(10%) blur(0.5px) brightness(100%)
+  filter: grayscale(15%) blur(0.5px) brightness(100%)
   opacity: .8
   //transform: scale(.995)
   box-shadow: none

@@ -1,9 +1,10 @@
 @import "breakpoint-helpers"
+@import "colors"
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat:wght@400;600;700&display=swap')
 
 .header
   overflow: hidden
-  background-color: #f1f1f1
+  background-color: $colorblind-fg
   padding: 15px 10px
   font-family: "Fira Code", monospace
   border-radius: 3px
@@ -23,11 +24,11 @@
   font-weight: 600
 
 .header a:hover
-  background-color: #dddddd
+  background-color: $colorblind-button-hover
   color: black
 
 .header a:active
-  background-color: dodgerblue
+  background-color: $colorblind-button-active
   color: white
 
 .header-right
@@ -44,7 +45,7 @@
 
 
 .page
-  background-color: rgba(240, 240, 240, 0.94)
+  background-color: $colorblind-fg
   height: fit-content
   padding: 10px
   margin-top: 10px

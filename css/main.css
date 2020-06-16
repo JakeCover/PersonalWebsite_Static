@@ -25,7 +25,7 @@
   color: black; }
 
 .header a:active {
-  background-color: dodgerblue;
+  background-color: #FF1E90;
   color: white; }
 
 .header-right {
@@ -40,7 +40,7 @@
   .header-right {
     float: none; } }
 .page {
-  background-color: rgba(240, 240, 240, 0.94);
+  background-color: #f1f1f1;
   height: fit-content;
   padding: 10px;
   margin-top: 10px;
