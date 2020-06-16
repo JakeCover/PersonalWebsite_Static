@@ -15,47 +15,43 @@
   width: 90%;
   position: absolute;
   z-index: 1;
-  top: 68%;
-  padding: 15px 20px;
+  top: 71%;
+  padding: 10px 15px;
   transition: 0.2s ease; }
   .service-wrapper-inner p {
     color: #e7e7e7; }
   .service-wrapper-inner.notitle {
     width: 60%;
-    top: 70%; }
+    top: 76%; }
 
 .service-overlay {
   background-color: rgba(32, 32, 32, 0.4);
   width: 120%;
   height: 120%;
   position: absolute;
-  top: 80%;
+  top: 68%;
   left: -28px;
   z-index: 0;
   transition: 0.2s ease; }
   .service-overlay.notitle {
-    -webkit-transform: rotate(35deg);
-    -moz-transform: rotate(35deg);
-    -ms-transform: rotate(35deg);
-    -o-transform: rotate(35deg);
-    left: -65%;
-    height: 300%; }
+    clip-path: polygon(0 0, 100% calc(100% - 2vw), 100% 100%, 0 100%);
+    height: 200%; }
   .service-overlay.title {
-    -webkit-transform: rotate(10deg);
-    -moz-transform: rotate(10deg);
-    -ms-transform: rotate(10deg);
-    -o-transform: rotate(10deg); }
+    clip-path: polygon(0 0, 100% calc(100% - 18.5vw), 100% 100%, 0 100%); }
 
 .grid-item:hover .service-wrapper-inner {
   top: -10%;
-  padding: 20px 20px; }
+  padding: 15px 15px; }
   .grid-item:hover .service-wrapper-inner.notitle {
-    padding: 15px 20px; }
+    padding: 10px 15px; }
 .grid-item:hover .service-overlay {
-  top: -10%;
   background-color: rgba(32, 32, 32, 0.8); }
+  .grid-item:hover .service-overlay.title {
+    top: -10%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
   .grid-item:hover .service-overlay.notitle {
     top: -20%;
+    clip-path: polygon(0 0, calc(100% - 15vw) 0, 100% 100%, 0 100%);
     left: -20%; }
 
 .grid {
@@ -80,8 +76,8 @@
   .grid-item--width2 {
     width: 100%; } }
 .blur-me {
-  filter: grayscale(15%) blur(0.5px) brightness(100%);
-  opacity: 0.8;
+  filter: grayscale(0%) blur(0.5px) brightness(100%);
+  opacity: 1;
   box-shadow: none; }
 
 .unblur-me {
