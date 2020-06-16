@@ -1,18 +1,1 @@
-http://www.alexafalcone.com/
-http://gudh.github.io/ihover/dist/index.html#circle10
-http://gudh.github.io/ihover/dist/index.html#circle13
-http://gudh.github.io/ihover/dist/index.html#circle17
-http://gudh.github.io/ihover/dist/index.html#square3
-http://gudh.github.io/ihover/dist/index.html#square6
-http://gudh.github.io/ihover/dist/index.html#square12
-https://codepen.io/honglio/pen/FKyxG
-https://codepen.io/russpate/pen/qRaepv --- Requires the whole area to be blurred
-https://codepen.io/Mamboleoo/pen/XgBvrJ ---
-https://codepen.io/cassidoo/pen/RZOWQb
-https://codepen.io/Sherpa23/pen/rKvJXg !!
-https://codepen.io/markmead/pen/MqmOVB !!
-https://codepen.io/ViktorKorolyuk/pen/GYGwpv
-https://ianlunn.github.io/Hover/ (border section)
-https://codepen.io/bhautikbharadava/full/OdPzdW (gives borders too)
-https://tympanus.net/Development/ProximityFeedback/index5.html
-https://tympanus.net/Development/ProximityFeedback/index7.html (scroll icon)
+https://codepen.io/exah/pen/Lqyem - Consider doing a fun border and having that change on hover

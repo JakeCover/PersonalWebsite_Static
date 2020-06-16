@@ -24,7 +24,8 @@
     <div class="grid">
         <!--Distest-->
         <div class="grid-item grid-item--tall4">
-            Distest
+            Distest <br>
+            One of my favorite Python projects, my attempt at implementing a test suite for discord bots.
         </div>
         <!--CodeDay-->
         <div class="grid-item grid-item--image">
@@ -54,9 +55,11 @@
     $(".grid-item").hover(
         function () {
             $(this).siblings().addClass('blur-me')
+            $(this).siblings().removeClass('unblur-me')
         },
         function () {
             $(this).siblings().removeClass('blur-me')
+            $(this).siblings().addClass('unblur-me')
         }
     )
 </script>

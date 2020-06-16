@@ -1,7 +1,8 @@
 @import "breakpoint-helpers"
 
 .grid-item
-  //background-color: coral
+  background-color: #eaeaea
+  border-radius: 3px
   width: 240px
   margin-bottom: 10px
   padding: 5px
@@ -37,30 +38,24 @@
 
 
 .blur-me
-  animation: FadeOut 0.22s
-  animation-fill-mode: both
-
-@keyframes FadeOut
-  to
-    opacity: 0.8
-    filter: grayscale(20%) blur(0.7px) brightness(94%)
-
-@keyframes FadeIn
-  to
-    opacity: 1
-    filter: grayscale(0%) blur(0px) brightness(100%)
+  filter: grayscale(10%) blur(0.5px) brightness(100%)
+  opacity: .8
+  //transform: scale(.995)
+  box-shadow: none
 
 
-//  filter:
-//  opacity: .8
-//  //transform: scale(.995)
-//  box-shadow: none
-//
-//.grid:hover .grid-item:hover
-//  //transform: scale(1.005)
-//  filter: blur(0px)
-//  opacity: 1
-//  //box-shadow: 0 8px 20px 0px rgba(0,0,0,0.125)
+.unblur-me
+  filter: grayscale(0%) blur(0px) brightness(100%)
+  opacity: 1
+  //transform: scale(.995)
+  box-shadow: none
+
+.grid:hover .grid-item:hover
+  //transform: scale(1.005)
+  opacity: 1
+  //box-shadow: 0 8px 20px 0px rgba(0,0,0,0.125)
+  //filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3))
+
 
 //.grid-img
 //  display: inline-block

@@ -1,4 +1,6 @@
 .grid-item {
+  background-color: #eaeaea;
+  border-radius: 3px;
   width: 240px;
   margin-bottom: 10px;
   padding: 5px;
@@ -28,16 +30,16 @@
   .grid-item--width2 {
     width: 100%; } }
 .blur-me {
-  animation: FadeOut 0.22s;
-  animation-fill-mode: both; }
+  filter: grayscale(10%) blur(0.5px) brightness(100%);
+  opacity: 0.8;
+  box-shadow: none; }
 
-@keyframes FadeOut {
-  to {
-    opacity: 0.8;
-    filter: grayscale(20%) blur(0.7px) brightness(94%); } }
-@keyframes FadeIn {
-  to {
-    opacity: 1;
-    filter: grayscale(0%) blur(0px) brightness(100%); } }
+.unblur-me {
+  filter: grayscale(0%) blur(0px) brightness(100%);
+  opacity: 1;
+  box-shadow: none; }
+
+.grid:hover .grid-item:hover {
+  opacity: 1; }
 
 /*# sourceMappingURL=masonry.css.map */
