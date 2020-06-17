@@ -1,15 +1,48 @@
+/* Rules for the grid icons and stuff */
+.grid {
+  transition: 0.2s all;
+  position: relative; }
+
+.grid-item-padding {
+  padding: 5px;
+  box-sizing: border-box;
+  height: fit-content; }
+
 .grid-item {
   background-color: #eaeaea;
   border-radius: 3px;
-  width: 240px;
-  margin-bottom: 10px;
   padding: 5px;
+  width: 100%;
   box-sizing: border-box;
-  height: 200px;
-  transition: 0.18s ease-in-out;
+  transition: 0.25s ease-in-out;
   overflow: hidden;
   position: relative; }
+  .grid-item img {
+    width: inherit; }
+  .grid-item img::after {
+    content: "";
+    display: block;
+    padding-bottom: 100%; }
 
+@media (min-width: 992px) {
+  .grid-sizer, .grid-item--std {
+    width: 25%; }
+
+  .grid-item--wide {
+    width: 50%; } }
+@media (min-width: 768px) and (max-width: 991px) {
+  .grid-item--std, .grid-sizer {
+    width: 50%; }
+
+  .grid-item--wide {
+    width: 100%; } }
+@media (max-width: 767px) {
+  .grid-item--std, .grid-sizer {
+    width: 100%; }
+
+  .grid-item--wide {
+    width: 100%; } }
+/* Rules for the overlay */
 .service-wrapper-inner {
   height: 100%;
   width: 90%;
@@ -34,10 +67,10 @@
   z-index: 0;
   transition: 0.2s ease; }
   .service-overlay.notitle {
-    clip-path: polygon(0 0, 100% calc(100% - 2vw), 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 90%, 100% 100%, 0 100%);
     height: 200%; }
   .service-overlay.title {
-    clip-path: polygon(0 0, 100% calc(100% - 18.5vw), 100% 100%, 0 100%); }
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%); }
 
 .grid-item:hover .service-wrapper-inner {
   top: -10%;
@@ -51,36 +84,18 @@
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
   .grid-item:hover .service-overlay.notitle {
     top: -20%;
-    clip-path: polygon(0 0, calc(100% - 15vw) 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 65% 0, 100% 100%, 0 100%);
     left: -20%; }
 
-.grid {
-  margin: 0 auto;
-  transition: 0.2s all; }
+img {
+  transition: 0.25s; }
 
-.grid-item--tall3 {
-  height: 300px; }
-
-.grid-item--tall4 {
-  height: 400px; }
-
-.grid-item--width2 {
-  background-color: #81d4fa;
-  width: 490px; }
-
-.grid-item--image {
-  width: fit-content;
-  height: fit-content; }
-
-@media (max-width: 575px) {
-  .grid-item--width2 {
-    width: 100%; } }
-.blur-me {
-  filter: grayscale(0%) blur(0.5px) brightness(100%);
+.blur-me img {
+  filter: grayscale(0%) blur(0px) brightness(100%);
   opacity: 1;
   box-shadow: none; }
 
-.unblur-me {
+.unblur-me img {
   filter: grayscale(0%) blur(0px) brightness(100%);
   opacity: 1;
   box-shadow: none; }
