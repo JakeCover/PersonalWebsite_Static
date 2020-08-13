@@ -1,44 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Montserrat:wght@400;600;700&display=swap");
-.header {
+.navbar {
   overflow: hidden;
   background-color: #f1f1f1;
   padding: 15px 10px;
   font-family: "Fira Code", monospace;
   border-radius: 3px; }
 
-.header a {
+.navbar a {
   float: left;
   color: black;
   text-align: center;
   padding: 7px 12px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 25px;
   border-radius: 4px; }
 
-.header a.name {
+.navbar a.name {
   font-size: 25px;
   font-weight: 600; }
 
-.header a:hover {
+.navbar a:hover {
   background-color: #dddddd;
   color: black; }
 
-.header a:active {
-  background-color: #FF1E90;
-  color: white; }
-
-.header-right {
-  float: right; }
-
-@media (max-width: 575px) {
-  .header a {
-    float: none;
-    display: block;
-    text-align: left; }
-
-  .header-right {
-    float: none; } }
 .page {
   background-color: #f1f1f1;
   height: fit-content;
