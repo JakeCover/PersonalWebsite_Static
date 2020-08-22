@@ -6,103 +6,93 @@
     <meta content="Jake Cover's Homepage" name="description">
     <title>Jake Cover</title>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/masonry.css">
+    <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/footer.css">
+
 </head>
 <body>
-<header class="header">
-    <a href="index.html" class="name">Jake Cover</a>
+<header class="navbar navbar-expand-lg navbar-light bg-light">
+    <a href="index.html" class="navbar-brand">Jake Cover</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-    <div class="header-right">
-        <a class="active" href="index.html">Home</a>
-        <a href="contact.html">Contact</a>
-        <a href="about.html">About</a>
-        <a href="resume.html">Resume</a>
-        <a href="https://github.com/JakeCover">GitHub</a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="resume.html">Resume</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/JakeCover">GitHub</a>
+            </li>
+        </ul>
     </div>
-</header>
-<div class="page">
-    <div class="grid">
-        <div class="grid-sizer"></div>
-        <!--CodeDay-->
-        <div class="grid-item-padding grid-item--std">
-            <div class="grid-item">
-                <img class="grid-img" src="images/codedaysd.png" alt="CodeDay SD Logo">
-                <div class="service-wrapper-inner title">
-                    <h2>CodeDay</h2>
-                    <div class="description">
-                        <p>
-                            CodeDay, an event by SRND, is a beginner-friendly 24 hour event for students that challenges
-                            attendees to create a game or an app.<br>
-                            I served as the Regional Manager for CodeDay San Diego for one year.
-                        </p>
-                    </div>
-                </div>
-                <div class="service-overlay title"></div>
 
-            </div>
-        </div>
-        <!--SRND-->
-        <div class="grid-item-padding grid-item--std">
-            <div class="grid-item">
-                <img src="images/codeday-notext-color.svg" alt="Redish Heart, SRND Logo">
-                <div class="service-wrapper-inner title">
-                    <h2>SRND</h2>
-                    <div class="description">
-                        <p>SRND is an educational nonprofit that works to provide CS education to high school and
-                            college students and to increase diversity in tech.</p>
-                    </div>
+
+</header>
+<div class="page" style="text-align: center;">
+    <p style="font-size: x-large">Hey! This site is still under construction. You can see where it stands today, but additional content may be added soon.</p>
+</div>
+<div class="page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-3 col-lg-4 col-sm-6 tall top_buffer">
+                <div class="image">
+                    <img class="img-fluid" src="images/codedaysd.png" alt="CodeDay SD Logo">
                 </div>
-                <div class="service-overlay title"></div>
-            </div>
-        </div>
-        <!--Distest-->
-        <div class="grid-item-padding grid-item--std">
-            <div class="grid-item">
-                <img class="grid-img" src="images/distest.svg" alt="CodeDay SD Logo">
-                <div class="service-wrapper-inner title">
-                    <h2>Distest</h2>
-                    <div class="description">
-                        <p>
-                            One of my favorite Python projects, a tool to write automated integration tests for discord
-                            bots.
-                        </p>
-                    </div>
+                <div class="description">
+                    <p>CodeDay, an event by SRND, is a beginner-friendly 24 hour event for students that challenges
+                        attendees to create a game or an app.<br>
+                        I served as the Regional Manager for CodeDay San Diego for one year.</p>
                 </div>
-                <div class="service-overlay title"></div>
             </div>
-        </div>
-        <!--ScoreSaver Installer-->
-        <div class="grid-item-padding grid-item--std">
-            <div class="grid-item">
-                <img src="images/scoresaver.svg" alt="Red to Blue Gradient w/ White Download Icon">
-                <div class="service-wrapper-inner title">
-                    <h2>ScoreSaver</h2>
-                    <div class="description">
-                        <p>SRND is an educational nonprofit that works to provide CS education to high school and
-                            college students and to increase diversity in tech.</p>
-                    </div>
+            <div class="col-xl-3 col-md-4 col-sm-6 tall top_buffer">
+                <div class="image">
+                    <img class="img-fluid" src="images/codeday-notext-color.svg" alt="Redish Heart, SRND Logo">
                 </div>
-                <div class="service-overlay title"></div>
-            </div>
-        </div>
-        <!--Foresight-->
-        <div class="grid-item-padding grid-item--wide">
-            <div class="grid-item">
-                <img src="images/foresightsports.png" alt="ForeSight Sports Logo0">
-                <div class="service-wrapper-inner notitle">
-                    <div class="description">
-                        <p>SRND is an educational nonprofit that works to provide CS education to high school and
-                            college students and to increase diversity in tech.</p>
-                    </div>
+                <div class="description">
+                    <p>SRND is an educational nonprofit that works to provide CS education to high school and
+                        college students and to increase diversity in tech. I worked here for a year to create a number
+                        of tools and projects, which can be found on my resume.</p>
                 </div>
-                <div class="service-overlay notitle"></div>
             </div>
-        </div>
-        <!--ReplyBot-->
-        <div class="grid-item-padding">
-            <div class="grid-item grid-item--tall3">ReplyBot</div>
+            <div class="col-xl-3 col-md-4 col-sm-6 tall top_buffer">
+                <div class="image">
+                    <img class="img-fluid" src="images/distest.svg" alt="Distest Logo">
+                </div>
+                <div class="description">
+                    <p>Distest is a testing library for Discord bots that allows for full integration tests of your bot,
+                        improving the discord bot development workflow significantly.</p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-4 col-sm-6 tall top_buffer">
+                <div class="image">
+                    <img class="img-fluid" src="images/scoresaver.svg" alt="Red to Blue Gradient w/ White Download Icon">
+                </div>
+                <div class="description">
+                    <p>A Chrome extension to help you download beatsaber songs directly from ScoreSaber. No more searching
+                    for mapper names on BeatSaver, just download the newest ranked songs directly!</p>
+                </div>
+            </div>
+            <div class="col-xs-12 wide top_buffer">
+                <div class="image">
+                    <img class="img-fluid" src="images/foresightsports.png" alt="ForeSight Sports Logo0">
+                </div>
+                <div class="description">
+                    <p>Foresight Sports creates advanced augmented reality sports experiences. I created multiple games
+                        using Unity that took data from their launch monitor technology and translated it into a seamless experience.</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -113,9 +103,10 @@
         <div class="col-8">
             <h6>Jake Cover</h6>
             <p class="text-justify">
-                Made by Jake Cover, a CS student who really needs to find something witty and interesting to put here soon.
+                Made by Jake Cover, a CS student who really needs to find something witty and interesting to put here
+                soon.
                 <br>
-                Checklist by Arthur Shlain from the Noun Project
+                Checklist Icon by Arthur Shlain from the Noun Project
             </p>
         </div>
         <div class="col-3">
@@ -136,7 +127,14 @@
 
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script src="scripts/masonry_conf.js"></script>
+<!--<editor-fold desc="Scripts">-->
 <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
 <script>
     $(".grid-item").hover(
         function () {
@@ -149,5 +147,6 @@
         }
     )
 </script>
+<!--</editor-fold>-->
 </body>
 </html>
