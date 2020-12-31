@@ -1,29 +1,32 @@
 import React from "react";
 import "./Header.scss";
-import { Button, Typography } from "antd";
+import {Button, Space, Typography} from "antd";
+import {Link} from "react-router-dom";
 
-const { Title } = Typography;
+const {Title} = Typography;
 
 export const Header = () => {
-  return (
-    <header>
-      <Button type={"text"} href="index.html" className="navbar-brand">
-        <Title>Jake Cover</Title>
-      </Button>
+    return (
+        <header>
+            <Link to="/" className="navbar-brand">
+                <h1>Jake Cover</h1>
+            </Link>
 
-      <a className="nav-link" href="index.html">
-        Home
-      </a>
+            <Space>
+                <Link className="nav-link" to="/">
+                    <h2>Home</h2>
+                </Link>
 
-      <a className="nav-link" href="contact.html">
-        Contact
-      </a>
-      <a className="nav-link" href="resume.html">
-        Resume
-      </a>
-      <a className="nav-link" href="https://github.com/JakeCover">
-        GitHub
-      </a>
-    </header>
-  );
+                <Link className="nav-link" to="/contact">
+                    <h2>Contact</h2>
+                </Link>
+                <Link className="nav-link" to="/resume">
+                    <h2>Resume</h2>
+                </Link>
+                <a className="nav-link" href="https://github.com/JakeCover">
+                    <h2>GitHub</h2>
+                </a>
+            </Space>
+        </header>
+    );
 };
