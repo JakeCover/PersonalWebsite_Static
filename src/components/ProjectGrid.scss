@@ -20,13 +20,13 @@ $breakpoints: (x-small: 320px, small: 660px, medium: 900px, large: 1300px, x-lar
   //padding: 10px;
 
   @include media("<=x-small") {
-    .GridSizer, .OneByOne, .FourByOne {
+    .GridSizer, .OneWide, .FourByOne {
       width: 100%;
     }
   }
 
   @include media(">x-small", "<small") {
-    .GridSizer, .OneByOne {
+    .GridSizer, .OneWide {
       width: 49%;
     }
     .FourByOne {
@@ -35,7 +35,7 @@ $breakpoints: (x-small: 320px, small: 660px, medium: 900px, large: 1300px, x-lar
   }
 
   @include media(">=small", "<medium") {
-    .GridSizer, .OneByOne {
+    .GridSizer, .OneWide {
       width: 32%;
     }
     .FourByOne {
@@ -44,7 +44,7 @@ $breakpoints: (x-small: 320px, small: 660px, medium: 900px, large: 1300px, x-lar
   }
 
   @include media(">=medium", "<large") {
-    .GridSizer, .OneByOne {
+    .GridSizer, .OneWide {
       width: 24.5%;
     }
     .FourByOne {
@@ -53,60 +53,112 @@ $breakpoints: (x-small: 320px, small: 660px, medium: 900px, large: 1300px, x-lar
   }
 
   @include media(">=large", "<x-large") {
-    .GridSizer, .OneByOne {
+    .GridSizer, .OneWide {
       max-width: 300px;
       width: 19.5%;
     }
     .FourByOne {
-      width: 79.5%;
-      max-width: 1200px;
+      width: 58.5%;
+      max-width: 900px;
     }
   }
 
   @include media(">=x-large") {
-    .GridSizer, .OneByOne {
+    .GridSizer, .OneWide {
       width: 300px;
     }
     .FourByOne {
-      width: 1200px;
+      width: 900px;
     }
   }
-
-
 }
 
-.OneByOne {
+.GridElement {
+  padding: 5px;
+
+  .GridElementInternal {
+    padding: 9px;
+    border-radius: 5px;
+    background: lightcyan;
+
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .GridElementInternal:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+
+  h2 {
+    font-family: "Fira Code", monospace;
+    font-weight: 400;
+    margin-bottom: 0px;
+    line-height: normal;
+  }
+
+  h3 {
+    line-height: normal;
+    color: darkgrey;
+    margin-bottom: 3px;
+  }
+
+  p {
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    margin-bottom: 0;
+  }
+}
+
+.OneWide {
   display: flex;
   flex-direction: column;
   width: available;
 
-  padding: 10px;
-
   img {
     width: 100%;
-  }
-
-  p {
-
+    margin-bottom: 5px;
   }
 }
 
 .FourByOne {
-  grid-column: span 2;
-  display: flex;
-  flex-direction: row;
+  .GridElementInternal {
+    display: flex;
+    align-items: center;
 
-  .image {
-    flex: 1;
+    .image {
+      flex: 1;
 
-    img {
-      width: 100%;
-      max-width: 100%;
+      img {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+
+    .description {
+      min-width: 20ch;
+      width: 30ch;
+    }
+
+    @include media(">small") {
+      flex-direction: row;
+
+    }
+    @include media("<=small") {
+      flex-direction: column;
+      .description {
+        width: 95%;
+      }
     }
   }
+}
 
-  p {
-    min-width: 20ch;
-    width: 30ch;
-  }
+.LinkIcon {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  font-size: 24px;
+  color: black;
+
+  background: rgba(224,255,255, 0.7);
+  border-radius: 5px;
 }
