@@ -1,0 +1,164 @@
+@import "~include-media/dist/_include-media.scss";
+
+$breakpoints: (x-small: 320px, small: 660px, medium: 900px, large: 1300px, x-large: 1560px);
+
+// Override Sass min()
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}
+
+// Override Sass max()
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+
+#project-grid {
+  margin: 10px;
+  background: #FFD43B;
+  border-radius: 5px;
+  //padding: 10px;
+
+  @include media("<=x-small") {
+    .GridSizer, .OneWide, .FourByOne {
+      width: 100%;
+    }
+  }
+
+  @include media(">x-small", "<small") {
+    .GridSizer, .OneWide {
+      width: 49%;
+    }
+    .FourByOne {
+      width: 100%;
+    }
+  }
+
+  @include media(">=small", "<medium") {
+    .GridSizer, .OneWide {
+      width: 32%;
+    }
+    .FourByOne {
+      width: 95%;
+    }
+  }
+
+  @include media(">=medium", "<large") {
+    .GridSizer, .OneWide {
+      width: 24.5%;
+    }
+    .FourByOne {
+      width: 73%;
+    }
+  }
+
+  @include media(">=large", "<x-large") {
+    .GridSizer, .OneWide {
+      max-width: 300px;
+      width: 19.5%;
+    }
+    .FourByOne {
+      width: 58.5%;
+      max-width: 900px;
+    }
+  }
+
+  @include media(">=x-large") {
+    .GridSizer, .OneWide {
+      width: 300px;
+    }
+    .FourByOne {
+      width: 900px;
+    }
+  }
+}
+
+.GridElement {
+  padding: 5px;
+
+  .GridElementInternal {
+    padding: 9px;
+    border-radius: 5px;
+    background: lightcyan;
+
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .GridElementInternal:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+
+  h2 {
+    font-family: "Fira Code", monospace;
+    font-weight: 400;
+    margin-bottom: 0px;
+    line-height: normal;
+  }
+
+  h3 {
+    line-height: normal;
+    color: darkgrey;
+    margin-bottom: 3px;
+  }
+
+  p {
+    font-family: "Montserrat", sans-serif;
+    color: black;
+    margin-bottom: 0;
+  }
+}
+
+.OneWide {
+  display: flex;
+  flex-direction: column;
+  width: available;
+
+  img {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+
+.FourByOne {
+  .GridElementInternal {
+    display: flex;
+    align-items: center;
+
+    .image {
+      flex: 1;
+
+      img {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+
+    .description {
+      min-width: 20ch;
+      width: 30ch;
+    }
+
+    @include media(">small") {
+      flex-direction: row;
+
+    }
+    @include media("<=small") {
+      flex-direction: column;
+      .description {
+        width: 95%;
+      }
+    }
+  }
+}
+
+.LinkIcon {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  font-size: 24px;
+  color: black;
+
+  background: rgba(224,255,255, 0.7);
+  border-radius: 5px;
+}
