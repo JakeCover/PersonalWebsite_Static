@@ -10,6 +10,8 @@
 
 import "./ProjectGrid.scss";
 import Masonry from "masonry-layout";
+import ImagesLoaded from "imagesloaded";
+
 import { useEffect } from "react";
 import {LinkOutlined} from "@ant-design/icons";
 import CodeDaySD from "../images/SanDiego.svg";
@@ -154,13 +156,18 @@ export const ProjectGrid = () => {
   useEffect(() => {
     var elem = document.querySelector("#project-grid");
 
-    // @ts-ignore
-    var msnry = new Masonry(elem, {
-      itemSelector: ".GridElement",
-      gutter: 0,
-      columnWidth: ".GridSizer",
-      percentPosition: true,
-    });
+    if (elem) {
+      const msnry = new Masonry(elem, {
+        itemSelector: ".GridElement",
+        gutter: 0,
+        columnWidth: ".GridSizer",
+        percentPosition: true,
+      });
+
+      ImagesLoaded(elem).on("progress", () => {
+        msnry.layout?.();
+      })
+    }
   });
 
   return (
