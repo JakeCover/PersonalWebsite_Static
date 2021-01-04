@@ -2,7 +2,7 @@
 
 name: Build React App
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
@@ -33,19 +33,21 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-             
+
       - name: Cache dependencies
         uses: actions/cache@v2
         with:
           path: |
             **/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
-          
+
       - name: Install dependencies
         run: npm install
 
       - name: Build
         run: npm run build
+        env:
+          CI: false
 
       # Runs a single command using the runners shell
       - name: Deploy
