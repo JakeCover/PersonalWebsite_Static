@@ -1,0 +1,49 @@
+.site-footer {
+  background: darkgrey;
+  margin: 10px;
+  border-radius: 5px;
+
+  h2 {
+    font-family: "Fira Code", monospace;
+    margin: 0;
+  }
+
+  p {
+    font-family: "Montserrat", sans-serif;
+
+    @media screen and (min-width: 900px) {
+      font-size: 16px;
+    }
+  }
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-evenly;
+
+  .blurb {
+    flex: 9;
+  }
+
+  .links-container {
+    flex: 4;
+  }
+
+  .footer-links {
+    padding-left: 0;
+    margin: 0;
+
+    columns: 100px 2;
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      //color: black;
+      font-family: "Montserrat", sans-serif;
+      text-decoration: underline;
+    }
+  }
+
+}
