@@ -22,6 +22,7 @@ header {
     h2 {
       margin: 0;
       border-radius: 5px;
+      line-height: normal;
 
       &:hover {
         background: #ddd;
@@ -36,30 +37,52 @@ header {
     h2:last-of-type {
       margin-right: 5px;
     }
+  }
 
+  /* Hide the link that should open and close the topnav on small screens */
+  .icon {
+    display: none;
+  }
 
-    /* Hide the link that should open and close the topnav on small screens */
-    .icon {
+  @media screen and (max-width: 660px) {
+    h2 {
       display: none;
     }
 
-    @media screen and (max-width: 660px) {
-      h2 {
-        display: none;
-      }
+    .icon {
+      margin-left: auto;
+      display: block;
+      position: absolute;
+      top: 19px;
+      right: 24px;
+      font-size: 30px;
+      border: none;
+    }
 
-      .icon {
-        margin-left: auto;
-        display: block;
-      }
+    .headerLinks {
+      visibility: hidden;
+      transition: visibility 0s, opacity 0.5s linear;
     }
   }
 
   @media screen and (max-width: 660px) {
     &.responsive {
-      background: #282c34;
+      display: block;
+
+      .headerLinks {
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      h1 {
+        text-align: left;
+      }
+
       h2 {
         display: block;
+        margin-left: 5px;
       }
     }
   }

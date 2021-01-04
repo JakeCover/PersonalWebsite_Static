@@ -1,4 +1,6 @@
 import "./Footer.scss"
+import { Link } from "react-router-dom";
+
 
 export const Footer = () => {
   return (
@@ -16,16 +18,13 @@ export const Footer = () => {
           <h2>Links and Stuff</h2>
           <ul className="footer-links">
             <li>
-              <a href="index.html">Home</a>
+              <Link to={"/"}>Home</Link>
             </li>
             <li>
-              <a href="contact.html">Contact</a>
+              <Link to={"/contact"}>Contact</Link>
             </li>
             <li>
-              <a href="about.html">About</a>
-            </li>
-            <li>
-              <a href="resume.html">Resume</a>
+              <Link  to={"/resume"}>Resume</Link>
             </li>
             <li>
               <a href="https://github.com/JakeCover">GitHub</a>

@@ -6,7 +6,7 @@ import { Main } from "./components/Main";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App"  style={{maxWidth: 1823, margin: "auto"}}>
       <Header />
       <Main />
       <Footer />

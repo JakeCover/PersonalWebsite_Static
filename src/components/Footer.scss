@@ -10,12 +10,24 @@
 
   p {
     font-family: "Montserrat", sans-serif;
+
+    @media screen and (min-width: 900px) {
+      font-size: 16px;
+    }
   }
 }
 
 .footer-grid {
   display: flex;
   justify-content: space-evenly;
+
+  .blurb {
+    flex: 9;
+  }
+
+  .links-container {
+    flex: 4;
+  }
 
   .footer-links {
     padding-left: 0;

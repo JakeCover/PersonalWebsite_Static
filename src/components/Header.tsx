@@ -1,9 +1,8 @@
 import React from "react";
 import "./Header.scss";
-import { Space } from "antd";
+import { Button, Space } from "antd";
 import { Link } from "react-router-dom";
-import {MenuOutlined} from "@ant-design/icons";
-
+import { MenuOutlined } from "@ant-design/icons";
 
 export const Header = () => {
   function showHideHamburger() {
@@ -23,6 +22,13 @@ export const Header = () => {
       <Link to="/" className="navbar-brand">
         <h1>Jake Cover</h1>
       </Link>
+      <Button
+        href={void 0}
+        className="icon"
+        onClick={() => showHideHamburger()}
+      >
+        <MenuOutlined className={"fa fa-bars"} />
+      </Button>
 
       <Space className={"headerLinks"}>
         <Link className="nav-link" to="/">
@@ -35,15 +41,13 @@ export const Header = () => {
         <Link className="nav-link" to="/resume">
           <h2>Resume</h2>
         </Link>
-        <a className="nav-link" href="https://github.com/JakeCover">
-          <h2>GitHub</h2>
-        </a>
         <a
-          href={void(0)}
-          className="icon"
-          onClick={() => showHideHamburger()}
+          className="nav-link"
+          href="https://github.com/JakeCover"
+          target="_blank"
+          rel="noreferrer"
         >
-          <MenuOutlined className={"fa fa-bars"}/>
+          <h2>GitHub</h2>
         </a>
       </Space>
     </header>
