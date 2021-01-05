@@ -36,7 +36,7 @@ type GridElementProps = {
   org?: string;
 };
 
-function OneWide({ title, text, link, org }: GridElementProps) {
+function SmallElement({ title, text, link, org }: GridElementProps) {
   if (link === undefined) {
     return (
       <div className={"OneWide GridElement"}>
@@ -53,12 +53,17 @@ function OneWide({ title, text, link, org }: GridElementProps) {
     );
   }
   return (
-    <a className={"OneWide GridElement Link"} href={link} rel={"noreferrer"} target={"_blank"}>
+    <a
+      className={"OneWide GridElement Link"}
+      href={link}
+      rel={"noreferrer"}
+      target={"_blank"}
+    >
       <div className={"GridElementInternal"}>
         <div className={"title"}>
           <h2>{title}</h2>
           {org && <h3>{org}</h3>}
-          <LinkOutlined className={"LinkIcon"}/>
+          <LinkOutlined className={"LinkIcon"} />
         </div>
         <div className={"description"}>
           <p>{text}</p>
@@ -66,9 +71,16 @@ function OneWide({ title, text, link, org }: GridElementProps) {
       </div>
     </a>
   );
-};
+}
 
-function OneWidePic({ image_url, image_alt, title, text, link, org }: GridElementImageProps) {
+function SmallElementPic({
+  image_url,
+  image_alt,
+  title,
+  text,
+  link,
+  org,
+}: GridElementImageProps) {
   if (link === undefined) {
     return (
       <div className={"OneWide Pic GridElement"}>
@@ -108,7 +120,60 @@ function OneWidePic({ image_url, image_alt, title, text, link, org }: GridElemen
   );
 }
 
-function FourByOneGridElement({ image_url, image_alt, title, text, link, org }: GridElementImageProps) {
+function MediumElement({
+  image_url,
+  image_alt,
+  title,
+  text,
+  link,
+  org,
+}: GridElementImageProps) {
+  if (link === undefined) {
+    return (
+        <div className={"Medium GridElement"}>
+          <div className={"GridElementInternal"}>
+            <div className={"image"}>
+              <img src={image_url} alt={image_alt} />
+            </div>
+            <div className={"description"}>
+              <h2>{title}</h2>
+              {org && <h3>{org}</h3>}
+              <p>{text}</p>
+            </div>
+          </div>
+        </div>
+    );
+  }
+  return (
+      <a
+          className={"Medium GridElement Link"}
+          href={link}
+          target={"_blank"}
+          rel={"noreferrer"}
+      >
+        <div className={"GridElementInternal"}>
+          <div className={"image"}>
+            <img src={image_url} alt={image_alt} />
+            <LinkOutlined className={"LinkIcon"} />
+          </div>
+          <div className={"description"}>
+            <h2>{title}</h2>
+            {org && <h3>{org}</h3>}
+            <p>{text}</p>
+          </div>
+        </div>
+      </a>
+  );
+}
+
+function LargeElementPic({
+  image_url,
+  image_alt,
+  title,
+  text,
+  link,
+  org,
+}: GridElementImageProps) {
   if (link === undefined) {
     return (
       <div className={"FourByOne GridElement"}>
@@ -177,7 +242,7 @@ export function ProjectGrid() {
         </div>
         <div id={"project-grid"}>
           <div className={"GridSizer"} />
-          <OneWide
+          <SmallElement
             title={"ElaticMatch"}
             org={"CodeDay"}
             text={
@@ -185,7 +250,7 @@ export function ProjectGrid() {
             }
             link={"https://github.com/codeday/labs-elastic-match"}
           />
-          <OneWide
+          <SmallElement
             title={"John Peter"}
             org={"CodeDay"}
             text={
@@ -193,7 +258,7 @@ export function ProjectGrid() {
             }
             link={"https://github.com/codeday/johnpeter-discord"}
           />
-          <OneWide
+          <SmallElement
             title={"CopyMoji"}
             org={"BetterDiscord"}
             text={
@@ -203,7 +268,7 @@ export function ProjectGrid() {
               "https://github.com/JakeCover/BetterDiscordExtensions/tree/main/plugins/CopyMoji"
             }
           />
-          <OneWidePic
+          <SmallElementPic
             image_url={CodeDaySD}
             image_alt={"CodeDay San Diego Logo"}
             org={"CodeDay"}
@@ -213,7 +278,7 @@ export function ProjectGrid() {
             }
             link={"https://event.codeday.org/sandiego"}
           />
-          <FourByOneGridElement
+          <LargeElementPic
             image_url={Foresight}
             image_alt={"Foresight Sports Logo"}
             title={"Foresight Sports"}
@@ -221,7 +286,7 @@ export function ProjectGrid() {
               "Foresight Sports creates advanced augmented reality sports experiences. I created multiple games using Unity that took data from their launch monitor technology and translated it into a seamless experience."
             }
           />
-          <OneWidePic
+          <SmallElementPic
             image_url={Distest}
             image_alt={"Distest Logo"}
             title={"Distest"}
@@ -231,7 +296,7 @@ export function ProjectGrid() {
             }
             link={"https://github.com/JakeCover/distest"}
           />
-          <OneWidePic
+          <SmallElementPic
             image_url={Scoresaver}
             image_alt={"Scoresaver Logo"}
             title={"ScoreSaver"}
@@ -241,27 +306,37 @@ export function ProjectGrid() {
             }
             link={"https://github.com/JakeCover/ScoreSaverExtention"}
           />
-          <OneWide
-            title={"Personal Website"}
-            org={"Random Projects"}
-            text={
-              "You're looking at it! There's not a whole lot to this, it's just a React site hosted on GitHub Pages, but I didn't know React before starting on this so I'm pretty proud of it."
-            }
-            link={"https://github.com/JakeCover/PersonalWebsite_Static"}
-          />
-          <OneWidePic
+
+          <MediumElement
             image_url={Hashicorp}
             image_alt={"HashiCorp Logo"}
             title={"Hashicorp Stack Sysadmin"}
             org={"CodeDay, Random Projects"}
             text={
-              "I've setup and used a stack consisting of Nomad, Consul, and Vault along with Traefik both at CodeDay, where it runs almost every service we have, as well as at home, where I use it to run a number of assorted services on a few old machines. I strongly recommend it, it's very powerful and not all that complex to get started with!"
+              "I've setup and used a stack consisting of Nomad, Consul, and Vault along with Traefik both at CodeDay, where it runs almost every service we have, as well as at home, where I use it to run a number of assorted services on a few old machines. I strongly recommend it, it's very powerful and not all that complex to get started with at any scale, from one personal server to large corporate backends."
             }
           />
-          <OneWide
-            title={"CodeDay"}
+          <SmallElement
+              title={"Personal Website"}
+              org={"Random Projects"}
+              text={
+                "You're looking at it! There's not a whole lot to this, it's just a React site hosted on GitHub Pages, but I didn't know React before starting on this so I'm pretty proud of it."
+              }
+              link={"https://github.com/JakeCover/PersonalWebsite_Static"}
+          />
+          <SmallElement
+            title={"Nomad Job Templates Tool"}
+            link={"https://github.com/JakeCover/NomadJobTemplatesTool"}
+            org={"Random Projects"}
             text={
-              "CodeDay, an event by SRND, is a beginner-friendly 24 hour event for students that challenges\n attendees to create a game or an app."
+              "A little custom tool to allow you to use jinga-esque text substitutions in Nomad jobfiles to help centralize the definition of service traefik tags. This mainly makes it easier to update and change networking configuration across many jobs easily."
+            }
+          />
+          <SmallElement
+            title={"Assorted Discord Bots"}
+            org={"Random Projects"}
+            text={
+              "I've made quite a number of discord bots over time! Some of them, like ReplyBot, which added a reply functionality to Discord years before they finally implemented it first-party, have been obsoleted nowadays, others like DiscordChannelMirror really aren't significantly notable, and many more have been lost to time and past me's lack of understanding of the importance of backup. I digress, however I really do love writing these sorts of applications!"
             }
           />
         </div>

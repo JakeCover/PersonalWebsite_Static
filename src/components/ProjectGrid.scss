@@ -1,6 +1,6 @@
 @import "~include-media/dist/_include-media.scss";
 
-$breakpoints: (x-small: 400px, small: 660px, medium: 900px, large: 1300px, x-large: 1560px);
+$breakpoints: (x-small: 430px, small: 660px, medium: 900px, large: 1300px, x-large: 1560px);
 
 // Override Sass min()
 @function min($numbers...) {
@@ -45,13 +45,13 @@ $breakpoints: (x-small: 400px, small: 660px, medium: 900px, large: 1300px, x-lar
   //padding: 10px;
 
   @include media("<=x-small") {
-    .GridSizer, .OneWide, .FourByOne {
+    .GridSizer, .OneWide, .FourByOne .Medium {
       width: 100%;
     }
   }
 
   @include media(">x-small", "<small") {
-    .GridSizer, .OneWide {
+    .GridSizer, .OneWide .Medium {
       width: 49%;
     }
     .FourByOne {
@@ -60,7 +60,7 @@ $breakpoints: (x-small: 400px, small: 660px, medium: 900px, large: 1300px, x-lar
   }
 
   @include media(">=small", "<medium") {
-    .GridSizer, .OneWide {
+    .GridSizer, .OneWide .Medium {
       width: 33%;
     }
     .FourByOne {
@@ -72,6 +72,9 @@ $breakpoints: (x-small: 400px, small: 660px, medium: 900px, large: 1300px, x-lar
     .GridSizer, .OneWide {
       width: 24.9%;
     }
+    .Medium {
+      width: 49.8%;
+    }
     .FourByOne {
       width: 74.6%;
     }
@@ -82,6 +85,10 @@ $breakpoints: (x-small: 400px, small: 660px, medium: 900px, large: 1300px, x-lar
       max-width: 300px;
       width: 19.9%;
     }
+    .Medium {
+      max-width: 600px;
+      width: 39.8%;
+    }
     .FourByOne {
       width: 59.5%;
       max-width: 900px;
@@ -91,6 +98,9 @@ $breakpoints: (x-small: 400px, small: 660px, medium: 900px, large: 1300px, x-lar
   @include media(">=x-large") {
     .GridSizer, .OneWide {
       width: 300px;
+    }
+    .Medium {
+      width: 600px;
     }
     .FourByOne {
       width: 900px;
@@ -129,6 +139,7 @@ $breakpoints: (x-small: 400px, small: 660px, medium: 900px, large: 1300px, x-lar
 
   p {
     font-family: "Montserrat", sans-serif;
+    font-size: 16px;
     color: black;
     margin-bottom: 0;
   }
@@ -142,6 +153,55 @@ $breakpoints: (x-small: 400px, small: 660px, medium: 900px, large: 1300px, x-lar
   img {
     width: 100%;
     margin-bottom: 5px;
+  }
+}
+
+.Medium {
+  img {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  @include media("<medium") {
+    display: flex;
+    flex-direction: column;
+    width: available;
+
+    img {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+  }
+
+  @include media(">=medium") {
+    // Two column sort of layout
+    .image {
+      float: left;
+      width: 50%;
+      shape-outside: inset(0);
+
+      img {
+        margin-bottom: 0;
+      }
+    }
+
+    .description {
+      display: inline;
+
+      p {
+        text-align: justify;
+      }
+
+      h2 h3 {
+        display: inline;
+      }
+    }
+  }
+
+  @include media(">x-large") {
+    .image {
+      width: 40%;
+    }
   }
 }
 
