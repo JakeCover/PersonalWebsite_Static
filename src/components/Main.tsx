@@ -3,7 +3,7 @@ import { Contact } from "./Contact";
 import { Home } from "./Home";
 import { Resume } from "./Resume";
 
-export const Main = () => {
+export function Main() {
   return (
     <main>
       <Switch>
@@ -13,4 +13,4 @@ export const Main = () => {
       </Switch>
     </main>
   );
-};
+}

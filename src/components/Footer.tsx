@@ -2,7 +2,7 @@ import "./Footer.scss"
 import { Link } from "react-router-dom";
 
 
-export const Footer = () => {
+export function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-grid">

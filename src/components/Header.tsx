@@ -4,7 +4,7 @@ import { Button, Space } from "antd";
 import { Link } from "react-router-dom";
 import { MenuOutlined } from "@ant-design/icons";
 
-export const Header = () => {
+export function Header() {
   function showHideHamburger() {
     var x = document.getElementById("myHeader");
     // @ts-ignore
@@ -52,4 +52,4 @@ export const Header = () => {
       </Space>
     </header>
   );
-};
+}

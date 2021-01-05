@@ -1,12 +1,12 @@
 import "./Home.scss";
 import { ProjectGrid } from "./ProjectGrid";
-import {AboutMe} from "./AboutMe";
+import { AboutMe } from "./AboutMe";
 
-export const Home = () => {
+export function Home() {
   return (
     <div id={"home"}>
       <AboutMe />
       <ProjectGrid />
     </div>
   );
-};
+}
