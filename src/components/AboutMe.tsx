@@ -1,16 +1,17 @@
 import "./AboutMe.scss";
 import { Link } from "react-router-dom";
 import { Tooltip } from "antd";
-import { useState, useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 
 interface NowPlayingData {
-  introduction: string,
+  introduction: string;
   lastfm: {
-    artist: string,
-    track: string,
-    playing: boolean
-  }
+    artist: string;
+    track: string;
+    playing: boolean;
+    url: string | undefined;
+  };
 }
 
 function LastFmLi() {
@@ -19,17 +20,16 @@ function LastFmLi() {
     lastfm: {
       artist: "nobody",
       playing: false,
-      track: "nothing"
-    }
+      track: "nothing",
+      url: undefined,
+    },
   });
 
   async function updateNowPlaying() {
     try {
-      const songRequestData = await axios.get(
-        "https://api.jakecover.me"
-      );
+      const songRequestData = await axios.get("https://api.jakecover.me");
 
-      setNowPlayingData(songRequestData.data)
+      setNowPlayingData(songRequestData.data);
     } catch (err) {
       console.error(err);
     }
@@ -45,10 +45,22 @@ function LastFmLi() {
     };
   }, []);
   if (nowPlayingData.lastfm.playing) {
-    return <li>listening to {nowPlayingData.lastfm.track} by {nowPlayingData.lastfm.artist}</li>;
+    return (
+      <li>
+        <a
+          href={nowPlayingData.lastfm.url}
+          target={"_blank"}
+          rel="noreferrer"
+          style={{ color: "inherit", textDecoration: "inherit" }}
+        >
+          listening to {nowPlayingData.lastfm.track} by{" "}
+          {nowPlayingData.lastfm.artist}
+        </a>
+      </li>
+    );
   }
   return <li>not listening to anything right now.</li>;
-};
+}
 
 function Age() {
   // Accounts for leap years and stuff
@@ -77,9 +89,9 @@ function Age() {
     // Check to see if we've gone too deep
     if (count > 25) return [center_n, center_d];
     // Check to see if we're close enough to the target
-    if (Math.abs(target - (center_n / center_d)) > 0.001) {
+    if (Math.abs(target - center_n / center_d) > 0.001) {
       // Look right down the tree
-      if (target > (center_n / center_d))
+      if (target > center_n / center_d)
         return searchSternBorcotTree(
           target,
           center_n,
@@ -116,28 +128,36 @@ function Age() {
     return `${ageYearsComponent} and ${target_n}/${target_d}`;
   }
 
-  const [age, setAge] = useState(CalcAge());
+  const millisecondsYear = milliseconds_year();
+  const time = new Date().getTime();
+  // eslint-disable-next-line
+  const memoizedCallbackCalcAge = useCallback(CalcAge, [
+    millisecondsYear,
+    time,
+  ]);
+
+  const [age, setAge] = useState(memoizedCallbackCalcAge());
 
   function UpdateAge() {
-    setAge(CalcAge());
+    setAge(memoizedCallbackCalcAge());
   }
 
-  useEffect(() => {
-    UpdateAge();
+  const memoizedCallbackUpdateAge = useCallback(UpdateAge, [
+    memoizedCallbackCalcAge,
+  ]);
 
-    const interval = setInterval(UpdateAge, 5000);
+  useEffect(() => {
+    memoizedCallbackUpdateAge();
+
+    const interval = setInterval(memoizedCallbackUpdateAge, 5000);
 
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [memoizedCallbackUpdateAge]);
 
-  return (
-    <li>
-      {age} years old
-    </li>
-  );
-};
+  return <li>{age} years old</li>;
+}
 
 export function AboutMe() {
   function EmailHandler() {
@@ -223,19 +243,18 @@ export function AboutMe() {
             <h2>I'm:</h2>
             <ul>
               <Age />
+
+              <LastFmLi />
               <Tooltip
                 title={
                   "Hey! This part is still a work in progress, check back in a bit to see if it's working!"
                 }
               >
-                <LastFmLi />
                 <li>
                   doing (general stuff - in class, projects, sleeping, games)
                 </li>
               </Tooltip>
-              <li>
-                rather colorblind
-              </li>
+              <li>rather colorblind</li>
             </ul>
           </div>
         </div>
