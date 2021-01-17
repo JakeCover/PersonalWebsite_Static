@@ -4,17 +4,32 @@ import { Tooltip } from "antd";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+interface NowPlayingData {
+  introduction: string,
+  lastfm: {
+    artist: string,
+    track: string,
+    playing: boolean
+  }
+}
+
 function LastFmLi() {
-  const [nowPlayingSong, setNowPlayingSong] = useState<string>("nothing");
-  const [nowPlayingArtist, setNowPlayingArtist] = useState<string>("no-one");
+  const [nowPlayingData, setNowPlayingData] = useState<NowPlayingData>({
+    introduction: "",
+    lastfm: {
+      artist: "nobody",
+      playing: false,
+      track: "nothing"
+    }
+  });
 
   async function updateNowPlaying() {
     try {
-      const songData = await axios.get(
-        "https://jsonplaceholder.typicode.com/posts"
+      const songRequestData = await axios.get(
+        "https://api.jakecover.me"
       );
 
-      console.log(songData.data);
+      setNowPlayingData(songRequestData.data)
     } catch (err) {
       console.error(err);
     }
@@ -29,7 +44,10 @@ function LastFmLi() {
       clearInterval(interval);
     };
   }, []);
-  return <li>listening to ____ by ____</li>;
+  if (nowPlayingData.lastfm.playing) {
+    return <li>listening to {nowPlayingData.lastfm.track} by {nowPlayingData.lastfm.artist}</li>;
+  }
+  return <li>not listening to anything right now.</li>;
 };
 
 function Age() {
