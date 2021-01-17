@@ -178,10 +178,10 @@ export function AboutMe() {
               <li>
                 <b>Name</b>: Jake Cover
               </li>
-              <li>Occupation: Student</li>
-              <li>Location: Southern California</li>
+              <li><b>Occupation:</b> Student</li>
+              <li><b>Location:</b> Southern California</li>
               <li>
-                Projects:{" "}
+                <b>Projects:</b>{" "}
                 <button
                   onClick={() =>
                     document.getElementById("project-header")?.scrollIntoView({
@@ -194,10 +194,10 @@ export function AboutMe() {
                 </button>
               </li>
               <li>
-                Resume: <Link to={"/resume"}>Over here</Link>
+                <b>Resume:</b> <Link to={"/resume"}>Over here</Link>
               </li>
               <li>
-                Find Me:
+                <b>Find Me:</b>
                 <ul>
                   <li>
                     Email: <button onClick={EmailHandler}>Click This</button>
