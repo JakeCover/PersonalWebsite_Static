@@ -1,6 +1,6 @@
 import "./Home.scss";
 import { ProjectGrid } from "./ProjectGrid";
-import { AboutMe } from "./AboutMe";
+import { AboutMe } from "./AboutMe/AboutMe";
 
 export function Home() {
   return (
