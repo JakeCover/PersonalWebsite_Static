@@ -1,12 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-snapshot";
+
 import "./index.scss";
-import "./imports.scss"
+import "./imports.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { HashRouter } from "react-router-dom";
 
-ReactDOM.render(
+render(
   <HashRouter>
     <App />
   </HashRouter>,
