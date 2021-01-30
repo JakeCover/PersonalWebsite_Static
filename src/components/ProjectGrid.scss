@@ -138,7 +138,7 @@ $breakpoints: (x-small: 430px, small: 660px, medium: 900px, large: 1300px, x-lar
 
   h3 {
     line-height: normal;
-    color: darkgrey;
+    color: var(--grid-element-subheader);
     margin-bottom: 3px;
   }
 
@@ -249,6 +249,6 @@ $breakpoints: (x-small: 430px, small: 660px, medium: 900px, large: 1300px, x-lar
   font-size: 24px;
   color: black;
 
-  background: var(--link-icon-background);
+  background: var(--chainlink-icon-background);
   border-radius: 5px;
 }
