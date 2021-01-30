@@ -14,11 +14,11 @@ $breakpoints: (x-small: 430px, small: 660px, medium: 900px, large: 1300px, x-lar
 
 #project-grid-parent {
   margin: 10px;
-  background: #FECEA8;
+  background: var(--grid-background);
   border-radius: 5px;
 
   & > #project-header {
-    background: #1C1C1C;
+    background: var(--grid-header-background);
     border-radius: 5px 5px 0 0;
     margin-bottom: 2px;
 
@@ -26,7 +26,7 @@ $breakpoints: (x-small: 430px, small: 660px, medium: 900px, large: 1300px, x-lar
     padding: 5px;
 
     * {
-      color: white;
+      color: var(--grid-header-text);
     }
 
     h2 {
@@ -119,7 +119,7 @@ $breakpoints: (x-small: 430px, small: 660px, medium: 900px, large: 1300px, x-lar
   .GridElementInternal {
     padding: 9px;
     border-radius: 5px;
-    background: #F1F1F1;
+    background: var(--grid-element-background);
 
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
     transition: box-shadow 0.3s ease-in-out;
@@ -249,6 +249,6 @@ $breakpoints: (x-small: 430px, small: 660px, medium: 900px, large: 1300px, x-lar
   font-size: 24px;
   color: black;
 
-  background: rgba(224, 255, 255, 0.7);
+  background: var(--link-icon-background);
   border-radius: 5px;
 }

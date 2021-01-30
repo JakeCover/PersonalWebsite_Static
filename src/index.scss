@@ -1,5 +1,5 @@
 * {
-  color: #2A363B;
+  color: var(--text);
 }
 
 body {
@@ -10,7 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   //background: url("./images/y-so-serious-white.png") repeat;
-  background-color: #3767A8 !important;
+  background-color: var(--background) !important;
 }
 
 #root {

@@ -3,6 +3,7 @@ import { render } from "react-snapshot";
 
 import "./index.scss";
 import "./imports.scss";
+import "./vars.scss"
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { HashRouter } from "react-router-dom";
