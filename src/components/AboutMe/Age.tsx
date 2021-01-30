@@ -13,6 +13,8 @@ export function Age() {
         return dateEnd - dateInit;
     }
 
+    // This will recursively calculate the closest fractional value to the given target, until it recuses 25 times or
+    //  the value is within 0.001 of the target
     function searchSternBorcotTree(
         target: number,
         left_n: number,

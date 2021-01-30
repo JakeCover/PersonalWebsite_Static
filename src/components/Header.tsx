@@ -35,9 +35,9 @@ export function Header() {
           <h2>Home</h2>
         </Link>
 
-        <Link className="nav-link" to="/contact">
-          <h2>Contact</h2>
-        </Link>
+        {/*<Link className="nav-link" to="/contact">*/}
+        {/*  <h2>Contact</h2>*/}
+        {/*</Link>*/}
         <Link className="nav-link" to="/resume">
           <h2>Resume</h2>
         </Link>
